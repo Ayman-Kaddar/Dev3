@@ -8,11 +8,11 @@
         </div>
         <div class="social-login">
             <a href="">
-                <i class="fa fa-facebook fa-lg"></i>
+                <i class=""></i>
                 Iniciar sesión con Facebook
             </a>
             <a href="{{route('login-google')}}">
-                <i class="fa fa-google-plus fa-lg"></i>
+                <i class=""></i>
                 Iniciar sesión con Google
             </a>
         </div>
