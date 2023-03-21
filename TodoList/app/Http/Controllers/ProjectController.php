@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProjectController extends Controller
 {
@@ -16,7 +18,7 @@ class ProjectController extends Controller
     public function index()
     {
         // all - get - first - find devuelve los datos
-        $projects = Project::all(); // DEVUELVE TODO
+        $projects = Project::where("user_id", Auth::user()->id)->get();
 
         return view("projects.index", compact("projects"));
     }
@@ -41,6 +43,7 @@ class ProjectController extends Controller
     {
         Project::create([
             "name" => $request->name,
+            "user_id" => Auth::user()->id,
         ]);
 
         //return redirect()->route('projects.index');

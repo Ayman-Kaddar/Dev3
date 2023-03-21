@@ -42,7 +42,7 @@ class TaskController extends Controller
             $task->data = Carbon::create($task->data)->format("d/m/Y");
         });
 
-        $projects = Project::all();
+        $projects = Project::where("user_id", Auth::user()->id)->get();
 
         return view("tasks.index", compact("tasks", "projects"));
         
@@ -87,7 +87,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        $projects = Project::all();
+        $projects = Project::where("user_id", Auth::user()->id)->get();
         return view("tasks.edit", compact("task", "projects"));
     }
 
@@ -134,7 +134,6 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         $task->delete();
-
         return back();
     }
 }
