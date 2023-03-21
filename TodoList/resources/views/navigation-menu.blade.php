@@ -18,7 +18,7 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.index')">
-                        {{ __('Proyectos') }}
+                        {{ __('Categoria ') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -151,7 +151,7 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.index')">
-                {{ __('Proyectos') }}
+                {{ __('Categoria  ') }}
             <x-jet-responsive-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.index')">
                 {{ __('Tareas') }}
             </x-jet-responsive-nav-link>

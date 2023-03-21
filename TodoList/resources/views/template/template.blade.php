@@ -21,7 +21,7 @@
                             <a class="nav-link" href="{{route("dashboard")}}">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route("projects.index")}}">Proyectos</a>
+                            <a class="nav-link" href="{{route("projects.index")}}">Categoria</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route("tasks.index")}}">Tareas</a>

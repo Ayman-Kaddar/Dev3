@@ -10,7 +10,7 @@
                     <div class="card-body py-4 px-4 px-md-5">
                         <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
                             <i class="fas fa-check-square me-1"></i>
-                            <u>PROJECTS</u>
+                            <u>CATEGORIA</u>
                         </p>
                         <div class="pb-2">
                             <div class="card">
@@ -20,7 +20,7 @@
                                             @csrf
                                             @method("put")
                                             <input type="text" class="form-control form-control-lg" name="name"
-                                                placeholder="Nom del proyecto..." value="{{$project->name}}">
+                                                placeholder="Nom de la categoria..." value="{{$project->name}}">
                                             <div>
                                                 <button type="submit" class="btn btn-primary">AÑADIR</button>
                                             </div>
