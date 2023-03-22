@@ -67,6 +67,33 @@ Route::get('/google-callback', function () {
     // $user->token
 });
 
+Route::get('/login-facebook', function () {
+    return Socialite::driver('facebook')->redirect();
+})->name('login-facebook');
+
+Route::get('/facebook-callback', function () {
+    $user = Socialite::driver('facebook')->user();
+    
+    $userExists = User::where('external_id',$user->id)->where('external_auth', 'facebook')->first();
+    dd($userExists);
+    //dd($userExists);
+    if($userExists){
+        Auth::login($userExists);
+    }else{
+        $userNew = User::create([
+            'name'=> $user->name,
+            'email'=> $user->email,
+            'avatar'=> $user->avatar,
+            'external_id'=> $user->id,
+            'external_auth'=> 'facebook',
+        ]);
+
+        Auth::login($userNew);
+    }
+    return redirect('/dashboard');
+    // $user->token
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
